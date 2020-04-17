@@ -270,6 +270,11 @@ impl Args {
         self.matches().is_present("quiet")
     }
 
+    /// Returns true if and only if ripgrep should perform an inverted search.
+    pub fn is_invert(&self) -> bool {
+        self.matches().is_present("invert-match")
+    }
+
     /// Returns true if and only if the search should quit after finding the
     /// first match.
     pub fn quit_after_match(&self) -> Result<bool> {
